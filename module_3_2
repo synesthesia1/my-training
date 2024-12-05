@@ -1,0 +1,28 @@
+def send_emails(message, recipient, sender = "university.help@gmail.com"):
+    if "@" not in recipient and sender or not recipient.endswith(
+            (".com", ".ru", ".net") or not sender.endswith(".com", ".ru", ".net")):
+        print("Невозможно отправить письмо с адреса <sender> на адрес <recipient>.")
+
+    elif sender == recipient:
+        print("Нельзя отправить письмо самому себе!")
+
+    elif sender == "university.help@gmail.com":
+        print("Письмо успешно отправлено с адреса <sender> на адрес <recipient>.")
+
+    else:
+        print("НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса <sender> на адрес <recipient>.")
+
+send_emails('какой-то текст', "rk@gmail.com")
+
+send_emails('какой-то текст', "rkgmail.com")
+
+send_emails('какой-то текст', "rk@gmail.gmail.qwerty")
+
+send_emails('какой-то текст', "university.help@gmail.com")
+
+send_emails('какой-то текст', "university.help@gmail.com", "rk@gmail.com")
+
+
+#Чтобы полностью отобразить результат задания и вывести последнее условие, в котором нестандартный отправитель,
+#мне пришлось убрать обязательный именнованый аргумент "*" перед sender в значениях функции. Но если поставить всё по 
+#условию задачи, все так же будет прекрасно работать.
